@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html>
   <head>
   <style>
@@ -15,9 +15,7 @@
     -o-transition: opacity 5s ease-in;
     -ms-transition: opacity 5s ease-in;
     transition: opacity 5s ease-in;
-
   }
-
   /* Modal Content */
   .modal-content {
       background-color: #fefefe;
@@ -25,10 +23,8 @@
       padding: 20px;
       border: 1px solid #888;
       width: 80%;
-      
 
   }
-
   /* The Close Button */
   .close {
       color: #aaaaaa;
@@ -36,7 +32,6 @@
       font-size: 28px;
       font-weight: bold;
   }
-
   .close:hover,
   .close:focus {
       color: #000;
@@ -46,6 +41,13 @@
   </style>
   </head>
   <body>
+
+ <div id="42">
+
+ </div>
+ <div id="batman">
+
+ </div>
 
   <h2>Modal Example</h2>
 
@@ -66,30 +68,53 @@
   <script>
   // Get the modal
   var modal = document.getElementById('myModal');
-
   // Get the button that opens the modal
   var btn = document.getElementById("myBtn");
-
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
-
-  // When the user clicks the button, open the modal 
+  // When the user clicks the button, open the modal
   btn.onclick = function() {
       modal.style.display = "block";
-  }
 
+      read("jabtip.json", function(text){
+          var data = JSON.parse(text);
+            document.getElementById(data.wiki42.id).innerHTML = "<div id='" + data.wiki42.id + "_content'><a href='" + data.wiki42.link + "' target='_blank'><p>"+ data.wiki42.name +"</p></a><br/><img src='"+ data.wiki42.img +"'/></div>";
+            document.getElementById(data.wikimarvel.id).innerHTML = "<div id='" + data.wikimarvel.id + "_content'><a href=' " + data.wikimarvel.link + "' target='_blank'><p>"+ data.wikimarvel.name +"</p></a><br/><img src='"+ data.wikimarvel.img +"'/></div>";
+
+            console.log(data);
+      });
+
+  }
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
       modal.style.display = "none";
-  }
 
+      var div1 = document.getElementById("42_content");
+      div1.parentNode.removeChild(div1);
+
+
+      var div2 = document.getElementById("batman_content");
+      div2.parentNode.removeChild(div2);
+
+
+
+  }
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
       if (event.target == modal) {
           modal.style.display = "none";
+
+          var div1 = document.getElementById("42_content");
+          div1.parentNode.removeChild(div1);
+
+
+          var div2 = document.getElementById("batman_content");
+          div2.parentNode.removeChild(div2);
+
+
       }
   }
   </script>
-
+  <script type="text/javascript" src="jabtip.js"></script>
   </body>
   </html>
