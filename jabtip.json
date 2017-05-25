@@ -1,0 +1,16 @@
+{
+  "wiki42": {
+    "id": "42",
+    "name": "The Hitchhiker's Guide to the Galaxy",
+    "img": "https://upload.wikimedia.org/wikipedia/en/b/bd/H2G2_UK_front_cover.jpg",
+    "link": "https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy",
+    "template": "card"},
+
+    "wikimarvel": {
+      "id": "batman",
+      "name": "Batman",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Batman_Detective_Comics_Vol_2_1.png/250px-Batman_Detective_Comics_Vol_2_1.png",
+      "link": "https://en.wikipedia.org/wiki/Batman",
+      "template": "card"}
+
+}
