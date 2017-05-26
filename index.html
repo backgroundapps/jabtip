@@ -65,7 +65,13 @@
 
   </div>
 
+  <script type="text/javascript" src="jabtip.js"></script>
+
   <script>
+
+
+  var t = new Tip("42", "The Hitchhiker's Guide to the Galaxy", "https://upload.wikimedia.org/wikipedia/en/b/bd/H2G2_UK_front_cover.jpg", "http://link", "card").run();
+
   // Get the modal
   var modal = document.getElementById('myModal');
   // Get the button that opens the modal
@@ -76,7 +82,7 @@
   btn.onclick = function() {
       modal.style.display = "block";
 
-      read("jabtip.json", function(text){
+      readFile("jabtip.json", function(text){
           var data = JSON.parse(text);
             document.getElementById(data.wiki42.id).innerHTML = "<div id='" + data.wiki42.id + "_content'><a href='" + data.wiki42.link + "' target='_blank'><p>"+ data.wiki42.name +"</p></a><br/><img src='"+ data.wiki42.img +"'/></div>";
             document.getElementById(data.wikimarvel.id).innerHTML = "<div id='" + data.wikimarvel.id + "_content'><a href=' " + data.wikimarvel.link + "' target='_blank'><p>"+ data.wikimarvel.name +"</p></a><br/><img src='"+ data.wikimarvel.img +"'/></div>";
@@ -84,6 +90,14 @@
             console.log(data);
       });
 
+      readClass(t, function(text){
+            document.getElementById(t.id).innerHTML = "<div id='" + t.id + "_content'><a href='" + t.link + "' target='_blank'><p>"+ t.name +"</p></a><br/><img src='"+ t.img +"'/></div>";
+
+            console.log(t);
+      });
+
+/*
+*/
   }
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
@@ -114,7 +128,8 @@
 
       }
   }
+
   </script>
-  <script type="text/javascript" src="jabtip.js"></script>
+
   </body>
   </html>
